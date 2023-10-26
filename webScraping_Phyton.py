@@ -56,3 +56,106 @@ time.sleep(1)
 aplicarFiltro = driver.find_element(By.XPATH, "/html/body/div/section/div/div/div/form/ul/li[5]/div/div/div/button")
 aplicarFiltro.click()
 time.sleep(2)
+
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+# Configurar as opções do Chrome para abrir maximizado
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--start-maximized")
+
+navegador = webdriver.Chrome(options=chrome_options)  # Use as opções configuradas
+navegador.get("https://www.linkedin.com/home")
+time.sleep(2)
+
+botaoVaga = navegador.find_element(By.XPATH, "/html/body/nav/ul/li[4]")
+botaoVaga.click()
+time.sleep(1)
+
+pesquisa = navegador.find_element(By.XPATH, "/html/body/div[1]/header/nav/section/section[2]/form/section[1]/input")
+pesquisa.send_keys("Analista de Dados")
+time.sleep(2)
+
+local = navegador.find_element(By.XPATH, "/html/body/div/header/nav/section/section[@id='jobs-search-panel']/form/section[2]/input")
+local.clear()
+local.send_keys("Bras")
+time.sleep(2)
+local.send_keys("il")
+time.sleep(1)
+local.send_keys(Keys.ARROW_DOWN)
+local.send_keys(Keys.ENTER)
+time.sleep(5)
+
+navegador.quit()
+
+
+
+import time
+
+from selenium import webdriver
+
+from selenium.webdriver.common.keys import Keys
+
+from selenium.webdriver.common.by import By
+
+
+
+# Configurar as opções do Chrome para abrir maximizado
+
+chrome_options = webdriver.ChromeOptions()
+
+chrome_options.add_argument("--start-maximized")
+
+
+
+navegador = webdriver.Chrome(options=chrome_options)  # Use as opções configuradas
+
+navegador.get("https://www.linkedin.com/home")
+
+time.sleep(2)
+
+
+
+botaoVaga = navegador.find_element(By.XPATH, "/html/body/nav/ul/li[4]")
+
+botaoVaga.click()
+
+time.sleep(1)
+
+
+
+pesquisa = navegador.find_element(By.XPATH, "/html/body/div[1]/header/nav/section/section[2]/form/section[1]/input")
+
+pesquisa.send_keys("Analista de Dados")
+
+time.sleep(2)
+
+
+
+local = navegador.find_element(By.XPATH, "/html/body/div/header/nav/section/section[@id='jobs-search-panel']/form/section[2]/input")
+
+local.clear()
+
+local.send_keys("Bras")
+
+time.sleep(2)
+
+local.send_keys("il")
+
+time.sleep(1)
+
+local.send_keys(Keys.ARROW_DOWN)
+
+local.send_keys(Keys.ENTER)
+
+time.sleep(5)
+
+
+
+navegador.quit()
+
